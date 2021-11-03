@@ -1,0 +1,59 @@
+﻿<Window x:Class="StopWatch_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StopWatch_WPF"
+        mc:Ignorable="d"
+        Title="Stop Watcher" Height="250" Width="400" ResizeMode="NoResize" Topmost="True" 
+        Background="{x:Null}"  AllowsTransparency="True" WindowStyle="None"
+        MouseDown="drag_click" Icon="/icon.png"
+        >
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="SkyBlue"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,0,80"/>
+
+
+        </Style>
+        
+    </Window.Resources>
+    
+
+    <Grid Background="white" Opacity="0.7"
+          >
+        <TextBlock FontSize="30" >Timer :</TextBlock>
+        <TextBlock x:Name="clocktxtblock" FontSize="30" Margin="150,0,0,0"
+                   Opacity="1.0" Background="white"></TextBlock>
+        <Button Content="X" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                Height="20" Width="20" FontSize="10" Background="red" Click="exit_Click"></Button>
+        <Button Content="-" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                Height="20" Width="20" FontSize="10" Margin="0,0,25,0" Click="minimize_Click"></Button>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="startbtn" Grid.Column="0"  Content="Start"  Click="startbtn_Click"  ></Button>
+            <Button x:Name="stopbtn"  Grid.Column="1" Content="Stop"  Click="stopbtn_Click" ></Button>
+            <Button x:Name="resetbtn" Grid.Column="2"  Content="Reset"  Click="resetbtn_Click" ></Button>
+            
+            
+
+        </Grid>
+
+        <Button x:Name="clearbtn" HorizontalAlignment="Left" Margin="10,40,0,0"  Content="Clear" Click="clearbtn_Click"></Button>
+        <ListBox x:Name="elapsedtimeitem"  Height="80" HorizontalAlignment="Right" Width="280" Margin="10,80,10,0"
+                 Background="Transparent"
+                 >
+            
+        </ListBox>
+    </Grid>
+</Window>
